@@ -60,7 +60,7 @@ do {
         continuar= false;
     };
  
- }while(continuar);
+ }while(continuar);  //main.js:63 Uncaught ReferenceError: continuar is not definedat main.js:63:9
 
 
  do {
@@ -100,15 +100,22 @@ do {
  
  }while(continuar);
 
-console.log("Listado del carrito")
- let total=0;
- for(let indesx= 0 ; indesx>carrito.length;index++) {
-    const element=carrito[index];
-    total= total+element.Precio;
-    console.log(element); 
-}
+console.log("Listado del carrito");
 
-console.log("el total es de "+ total)
+const nombres= carrito.map(el=>{
+    return carrito.nombre
+}); 
+// imprimir  solos los nombres de los productos
+console.log(nomrbes)
+// imprimir solor los precios
+const precios= carrito.map(el=>{
+    return carrito.Precio;
+}); 
+
+const total= carrito.reduce((scc,el)=>{
+    return acc+el.Precio;
+},0)
+console.log("total de la compra es de "+total)
 
 
 
